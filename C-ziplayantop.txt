@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
     i++;	
     rebouncing_height=first_height*ratio;
     if(rebouncing_height<1){
-    fprintf(hedef_dosya,"islem tamamlandý");
+    fprintf(hedef_dosya,"islem tamamlandÃ½");
 	
 	break;	
 	}
