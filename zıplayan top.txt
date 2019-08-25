@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+
+int main(int argc, char *argv[]) {
+	
+	double rebouncing_height;
+	
+	double first_height=10+rand()%30;
+    
+	double ratio = 0.4+rand()*0.4 / (double)RAND_MAX;
+    
+	
+	double total_vertical_distance=first_height;
+	
+	FILE * hedef_dosya=fopen("sonuc.txt","w+");
+	
+	int i=1;
+	fprintf(hedef_dosya,"%d.   %lf\t   %lf\n ",i,first_height,total_vertical_distance);
+	fprintf(stdout,"%d.   %lf\t   %lf\n ",i,first_height,total_vertical_distance);
+	while(first_height>1){
+    i++;	
+    rebouncing_height=first_height*ratio;
+    if(rebouncing_height<1){
+    fprintf(hedef_dosya,"islem tamamlandý");
+	
+	break;	
+	}
+    
+    first_height=rebouncing_height;
+    
+	total_vertical_distance += rebouncing_height*2;
+	
+	fprintf(hedef_dosya,"%d.\t  %lf\t   %lf\n ",i,rebouncing_height,total_vertical_distance);
+	fprintf(stdout,"%d.   %lf\t   %lf\n ",i,rebouncing_height,total_vertical_distance);
+	
+    	}
+    	
+   
+	
+	
+	
+	return 0;
+}
